@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Route;
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
+ */
 
 Route::get('/', function () {
     return view('welcome');
@@ -20,19 +20,19 @@ Route::get('/', function () {
 // route about
 Route::get('/about', function () {
     return '<h1>Hello World</h1>'
-    . 'Selamat Datang Di Web Saya <br>'
-    . 'Saya Sedang Belajar Laravel';
+        . 'Selamat Datang Di Web Saya <br>'
+        . 'Saya Sedang Belajar Laravel';
 });
 
 // routes saya
 Route::get('/saya', function () {
     return '<h1>Hello World, Saya Alvin<br></h1>'
-    . 'Saya Sedang Belajar Laravel <br>'
-    . 'Saya lahir di Bandung <br>'
-    . 'Saya berumur 17 tahun <br>'
-    . 'Saya tinggal di Rancamanyar <br>'
-    . 'Saya sekolah di SMK ASSALAAM BANDUNG <br>'
-    . 'Saya jurusan Rekayasa Perangkat Lunak <br>';
+        . 'Saya Sedang Belajar Laravel <br>'
+        . 'Saya lahir di Bandung <br>'
+        . 'Saya berumur 17 tahun <br>'
+        . 'Saya tinggal di Rancamanyar <br>'
+        . 'Saya sekolah di SMK ASSALAAM BANDUNG <br>'
+        . 'Saya jurusan Rekayasa Perangkat Lunak <br>';
 });
 
 // buat route basic to view
@@ -57,7 +57,7 @@ Route::get('myself/{nama}/{beratBadan}/{tinggiBadan}', function ($nama, $bb, $tb
 
     $bmi = $bb / (($tb / 100) ** 2);
 
-    if($bmi > 30) {
+    if ($bmi > 30) {
         $ket = "Obesitas";
     } else if ($bmi > 25) {
         $ket = "Kelebihan";
@@ -67,11 +67,11 @@ Route::get('myself/{nama}/{beratBadan}/{tinggiBadan}', function ($nama, $bb, $tb
         $ket = "Kekurangan";
     }
 
-    return "Nama : $nama <br>".
-    "Berat Badan : $bb kg <br>".
-    "Tinggi Badan : $tb cm <br>".
-    "Nilai BMI : " . round($bmi) . "<br>".
-    "Keterangan : $ket";
+    return "Nama : $nama <br>" .
+    "Berat Badan : $bb kg <br>" .
+    "Tinggi Badan : $tb cm <br>" .
+    "Nilai BMI : " . round($bmi) . "<br>" .
+        "Keterangan : $ket";
 });
 
 // Route Optional Parameter -> Ditandai dengan ?
