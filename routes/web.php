@@ -1,17 +1,8 @@
 <?php
 
+use App\Models\Post;
+use App\Models\Barang;
 use Illuminate\Support\Facades\Route;
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
- */
 
 Route::get('/', function () {
     return view('welcome');
@@ -77,4 +68,17 @@ Route::get('myself/{nama}/{beratBadan}/{tinggiBadan}', function ($nama, $bb, $tb
 // Route Optional Parameter -> Ditandai dengan ?
 Route::get('myname/{nama?}', function ($name = 'Alvin') {
     return "My Name is $name";
+});
+
+// menampilkan data dari DB
+Route::get('/testmodel', function () {
+    $data = Post::all();
+
+    return $data;
+});
+
+Route::get('/testbarang', function () {
+    $data = Barang::all();
+
+    return $data;
 });
