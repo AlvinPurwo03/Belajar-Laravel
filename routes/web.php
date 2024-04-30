@@ -2,6 +2,7 @@
 
 use App\Models\Post;
 use App\Models\Barang;
+use App\Models\Siswa;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -71,14 +72,49 @@ Route::get('myname/{nama?}', function ($name = 'Alvin') {
 });
 
 // menampilkan data dari DB
-Route::get('/testmodel', function () {
+Route::get('/post', function () {
     $data = Post::all();
 
-    return $data;
+    return view('tampil_post', compact('data'));
 });
 
-Route::get('/testbarang', function () {
+Route::get('/barang', function () {
     $data = Barang::all();
 
-    return $data;
+    return view('tampiling_barang', compact('data'));
+});
+
+// belajar view
+Route::get('/about', function () {
+    return view('about');
+});
+
+Route::get('/siswa', function () {
+    // menampilkan semua data
+    $data = Siswa::all();
+    
+    // menampilkan sesuai id
+    // $data = Siswa::find(1);
+
+    // menampilkan menggunakan where
+    // $data = Siswa::where('jenis_kelamin', 'like', '%Perempuan%')->get();
+
+    // mengubah data
+    // $data = Siswa::find(4);
+    // $data->nama = "Siti";
+    // $data->jenis_kelamin = "Perempuan";
+    // $data->save();
+
+    // menambahkan data
+    // $data = new Siswa;
+    // $data -> nama = 'Aisha';
+    // $data -> jenis_kelamin = 'Perempuan';
+    // $data -> alamat = 'Bandung, Sayati';
+    // $data -> agama = 'Islam';
+    // $data -> telepon = '0123456789';
+    // $data -> email = 'aisha@gmail.com';
+
+    // $data -> save();
+
+    return view('tampiling_siswa', compact('data'));
 });
