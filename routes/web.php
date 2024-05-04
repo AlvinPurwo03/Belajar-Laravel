@@ -2,7 +2,11 @@
 
 use App\Models\Post;
 use App\Models\Barang;
+use App\Models\Pengguna;
 use App\Models\Siswa;
+use App\Models\Telepon;
+use App\Models\Produk;
+use App\Models\Transaksi;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -117,4 +121,31 @@ Route::get('/siswa', function () {
     // $data -> save();
 
     return view('tampiling_siswa', compact('data'));
+});
+
+//route pengguna
+Route::get('/pengguna', function() {
+    $data = Pengguna::all();
+
+    return view('tampil_pengguna', compact('data'));
+});
+
+//route telepon
+Route::get('/telepon', function() {
+    $data = Telepon::all();
+
+    return view('tampil_telepon', compact('data'));
+});
+
+//route Produk
+Route::get('/produk', function() {
+    $data = Produk::all();
+
+    return view('tampil_produk', compact('data'));
+});
+//route Transaksi
+Route::get('/transaksi', function() {
+    $data = Transaksi::all();
+
+    return view('tampil_transaksi', compact('data'));
 });
