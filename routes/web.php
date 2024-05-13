@@ -149,3 +149,17 @@ Route::get('/transaksi', function() {
 
     return view('tampil_transaksi', compact('data'));
 });
+
+// Route Template
+Route::get('/template', function() {
+    $data = Post::all();
+
+    return view('template', compact('data'));
+});
+
+// Route Template Product
+Route::get('/template2', function() {
+    $data = Produk::all();
+
+    return view('template2', compact('data'));
+});
