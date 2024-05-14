@@ -16,21 +16,19 @@
     <div class="section">
     <div class="container">
         <div class="row mt-5 justify-content-center">
-            <h2>List Produk</h2>
+            <h2>List Artikel</h2>
         </div>
         <div class="row mt-5">
 
-            @foreach ($data as $produk)
+            @foreach ($data as $post)
                 
-            <div class="col-4 mt-5">
+            <div class="col-4">
                 <div class="card" style="width: 18rem;">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScPEZDyoGg9BcGs2BLxoYBjoTLUQQmJob1JCUrhZ99bQ&s" class="card-img-top" alt="...">
+                    <img src="https://cdn0-production-images-kly.akamaized.net/72FuVdD7Dq45MwMiK-QE4hGS5Lo=/1200x900/smart/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/2754932/original/005940800_1552970791-fotoHL_kucing.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h4 class="card-text"> {{$produk->nama_produk}} </h4>
-                    <p class="card-text"> {{$produk->jumlah}} </p>
-                    <p class="card-text"> {{$produk->tgl_produksi}} </p>
-                    <p class="card-text"> {{$produk->merek->nama_merek}} </p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <h5 class="card-title"> {{$post->title}} </h5>
+                    <p class="card-text"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum animi impedit nulla. </p>
+                    <a href="post/{{$post->id}}" class="btn btn-primary">Go</a>
                 </div>
                 </div>
             </div>

@@ -1,11 +1,14 @@
 <?php
 
-use App\Models\Post;
+use App\Http\Controllers\MerekController;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\ProductController;
 use App\Models\Barang;
 use App\Models\Pengguna;
+use App\Models\Post;
+use App\Models\Produk;
 use App\Models\Siswa;
 use App\Models\Telepon;
-use App\Models\Produk;
 use App\Models\Transaksi;
 use Illuminate\Support\Facades\Route;
 
@@ -44,7 +47,7 @@ Route::get('/vegetables', function () {
 });
 
 //route parameter: parameter ditandai dengan {}
-Route::get('product/{name}', function ($name) {
+Route::get('testproduct/{name}', function ($name) {
     return "Produk : $name";
 });
 
@@ -76,13 +79,13 @@ Route::get('myname/{nama?}', function ($name = 'Alvin') {
 });
 
 // menampilkan data dari DB
-Route::get('/post', function () {
+Route::get('/testpost', function () {
     $data = Post::all();
 
     return view('tampil_post', compact('data'));
 });
 
-Route::get('/barang', function () {
+Route::get('/testbarang', function () {
     $data = Barang::all();
 
     return view('tampiling_barang', compact('data'));
@@ -96,7 +99,7 @@ Route::get('/about', function () {
 Route::get('/siswa', function () {
     // menampilkan semua data
     $data = Siswa::all();
-    
+
     // menampilkan sesuai id
     // $data = Siswa::find(1);
 
@@ -124,42 +127,41 @@ Route::get('/siswa', function () {
 });
 
 //route pengguna
-Route::get('/pengguna', function() {
+Route::get('/pengguna', function () {
     $data = Pengguna::all();
 
     return view('tampil_pengguna', compact('data'));
 });
 
 //route telepon
-Route::get('/telepon', function() {
+Route::get('/telepon', function () {
     $data = Telepon::all();
 
     return view('tampil_telepon', compact('data'));
 });
 
 //route Produk
-Route::get('/produk', function() {
+Route::get('/produk', function () {
     $data = Produk::all();
 
     return view('tampil_produk', compact('data'));
 });
 //route Transaksi
-Route::get('/transaksi', function() {
+Route::get('/transaksi', function () {
     $data = Transaksi::all();
 
     return view('tampil_transaksi', compact('data'));
 });
 
-// Route Template
-Route::get('/template', function() {
-    $data = Post::all();
-
-    return view('template', compact('data'));
-});
-
 // Route Template Product
-Route::get('/template2', function() {
-    $data = Produk::all();
+Route::get('/product', [ProductController::class, 'menampilkan']);
+Route::get('/product/{id}', [ProductController::class, 'show']);
 
-    return view('template2', compact('data'));
-});
+
+// Route Template
+Route::get('/post', [PostController::class, 'menampilkan']);
+Route::get('/post/{id}', [PostController::class, 'show']);
+
+// Route Template
+Route::get('/merek', [MerekController::class, 'menampilkan']);
+Route::get('/merek/{id}', [MerekController::class, 'show']);
