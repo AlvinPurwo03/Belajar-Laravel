@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BrandController;
 use App\Http\Controllers\MerekController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProductController;
@@ -146,6 +147,7 @@ Route::get('/produk', function () {
 
     return view('tampil_produk', compact('data'));
 });
+
 //route Transaksi
 Route::get('/transaksi', function () {
     $data = Transaksi::all();
@@ -154,14 +156,21 @@ Route::get('/transaksi', function () {
 });
 
 // Route Template Product
-Route::get('/product', [ProductController::class, 'menampilkan']);
-Route::get('/product/{id}', [ProductController::class, 'show']);
+Route::get('/produk', [ProductController::class, 'menampilkan']);
+Route::get('/produk/{id}', [ProductController::class, 'show']);
 
 
-// Route Template
+// Route Template Artikel
 Route::get('/post', [PostController::class, 'menampilkan']);
 Route::get('/post/{id}', [PostController::class, 'show']);
 
-// Route Template
+// Route Template Merk
 Route::get('/merek', [MerekController::class, 'menampilkan']);
 Route::get('/merek/{id}', [MerekController::class, 'show']);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// Crud API Brand
+Route::resource('brand', BrandController::class);

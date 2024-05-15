@@ -10,11 +10,11 @@ class ProductController extends Controller
     public function menampilkan() {
         $data = Produk::all();
 
-        return view('product.index', compact('data'));
+        return view('produks.index', compact('data'));
     }
     public function show($id) {
         $data = Produk::findOrFail($id);
 
-        return view('product.show', compact('data'));
+        return view('produks.show', compact('data'));
     }
 }

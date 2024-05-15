@@ -7,13 +7,13 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link active" href="/post">Post</a>
+                        <a class="nav-link active" href="{{ url('post') }}">Post</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="/product">Product</a>
+                        <a class="nav-link active" href="{{ url('produk') }}">Product</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="/merek">Merk</a>
+                        <a class="nav-link active" href="{{ url('merek') }}">Merk</a>
                     </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0">

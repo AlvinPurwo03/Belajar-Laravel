@@ -27,7 +27,7 @@
                     <img src="https://static.promediateknologi.id/crop/0x0:0x0/0x0/webp/photo/indizone/2021/09/07/o8sZ4v4/mulai-tahun-2035-hyundai-cuma-akan-jual-kendaraan-listrik-di-eropa41.jpg" class="card-img-top" alt="...">
                 <div class="card-body" align="center">
                     <h1 class="card-text"> {{$produk->nama_produk}} </h1>
-                    <a href="product/{{$produk->id}}" class="btn btn-primary">Go</a>
+                    <a href="produk/{{$produk->id}}" class="btn btn-primary">Go</a>
                 </div>
                 </div>
             </div>
