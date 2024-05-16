@@ -28,7 +28,7 @@
                     <p class="card-text"> {{$data->tgl_produksi}} </p>
                     <p class="card-text"> {{$data->tgl_produksi}} </p>
                     <p class="card-text"> {{$data->merek->nama_merek}} </p>
-                    <a href="/product" class="btn btn-primary">Back</a>
+                    <a href="/produk" class="btn btn-primary">Back</a>
                 </div>
                 </div>
             </div>

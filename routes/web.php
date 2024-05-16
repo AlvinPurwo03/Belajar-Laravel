@@ -4,9 +4,11 @@ use App\Http\Controllers\BrandController;
 use App\Http\Controllers\MerekController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProdukController;
 use App\Models\Barang;
 use App\Models\Pengguna;
 use App\Models\Post;
+use App\Models\Product;
 use App\Models\Produk;
 use App\Models\Siswa;
 use App\Models\Telepon;
@@ -156,8 +158,8 @@ Route::get('/transaksi', function () {
 });
 
 // Route Template Product
-Route::get('/produk', [ProductController::class, 'menampilkan']);
-Route::get('/produk/{id}', [ProductController::class, 'show']);
+Route::get('/produk', [ProdukController::class, 'menampilkan']);
+Route::get('/produk/{id}', [ProdukController::class, 'show']);
 
 
 // Route Template Artikel
@@ -174,3 +176,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 // Crud API Brand
 Route::resource('brand', BrandController::class);
+
+// Crud API Product
+Route::resource('product', ProductController::class);

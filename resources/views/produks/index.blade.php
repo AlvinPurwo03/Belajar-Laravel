@@ -20,14 +20,15 @@
         </div>
         <div class="row mt-5">
 
-            @foreach ($data as $produk)
+            @foreach ($product as $data)
                 
             <div class="col-4 mt-5">
                 <div class="card" style="width: 18rem;">
-                    <img src="https://static.promediateknologi.id/crop/0x0:0x0/0x0/webp/photo/indizone/2021/09/07/o8sZ4v4/mulai-tahun-2035-hyundai-cuma-akan-jual-kendaraan-listrik-di-eropa41.jpg" class="card-img-top" alt="...">
+                    <img src="{{ asset('/images/product/' . $data->cover) }}" class="card-img-top" alt="...">
                 <div class="card-body" align="center">
-                    <h1 class="card-text"> {{$produk->nama_produk}} </h1>
-                    <a href="produk/{{$produk->id}}" class="btn btn-primary">Go</a>
+                    <h4 class="card-text"> {{$data->name_product}} </h4>
+                    <p class="card-text"> {{$data->price}} </p>
+                    {{-- <a href="produk/{{$data->pri}}" class="btn btn-primary">Go</a> --}}
                 </div>
                 </div>
             </div>
